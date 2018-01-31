@@ -11,3 +11,5 @@ This repository will be added to sequentially. In it you will find:
 
 ## Resources: 
 
+- Singly-linked list: http://stackabuse.com/python-linked-lists/
+
