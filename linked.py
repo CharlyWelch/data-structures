@@ -11,3 +11,6 @@
 # len(the_list) returns the size of the list
 # print(the_list) returns what the display() method returns
 # The constructor for your LinkedList class should allow optionally passing an iterable of values. This is the only optional parameter it should take. If an iterable is provided, the result will be a linked list instance containing the values in the iterable. The head of the list should be the last item in the iterable:
+
+class LinkedList():
+    pass
