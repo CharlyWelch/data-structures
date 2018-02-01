@@ -20,7 +20,7 @@ This repository will be added to sequentially. In it you will find:
 **Stack**
 - **Module**: 'stack.py'
 - **Tests**: 'test_stack.py'
-- **Time Complexity**: 
+- **Time Complexity**: O(1) 
 
 # Notes on Data Structures:
 
