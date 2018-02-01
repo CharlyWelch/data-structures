@@ -4,14 +4,23 @@ This repository will be added to sequentially. In it you will find:
 
 **Singly-Linked List**
 - **Module**: 'linked.py'
-- **Tests**: test_linked.py
+- **Tests**: 'test_linked.py'
 - **Time Complexity**: Access and searching are O(n), inserting, and deleting are O(1) (see note below)
 
 **Doubly-Linked List**
 - **Module**: 'dll.py'
-- **Tests**: test_dll.py
+- **Tests**: 'test_dll.py'
 - **Time Complexity**: Access and searching are O(n), inserting, and deleting are O(1) (see note below)
 
+**Queue**
+- **Module**: 'que_.py'
+- **Tests**: 'test_que\_.py'
+- **Time Complexity**: 
+
+**Stack**
+- **Module**: 'stack.py'
+- **Tests**: 'test_stack.py'
+- **Time Complexity**: 
 
 # Notes on Data Structures:
 
