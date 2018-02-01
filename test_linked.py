@@ -1,20 +1,40 @@
 import unittest
 import pytest
-from linked import Element, LinkedList
+from linked import Node, LinkedList
 
 class TestList(unittest.TestCase):
     def test_1(self):
-        ele = Element(5)
-        self.assertEqual(ele.value(), 5)
+        n1 = Node(5)
+        self.assertEqual(n1.value(), 5)
     
     def test_2(self):
-        ele = Element(7)
-        ele.next(Element(3))
-        self.assertEqual(ele.next().value(), 3)
+        l = LinkedList()
+        n1 = Node(5)
+        l.append(n1)
+        self.assertEqual(l.head._value, 5)
 
     def test_3(self):
-        ele = Element(7)
-        LinkedList().append(ele)
-        LinkedList().append(3)
-        self.assertEqual(LinkedList.tail, 3)
-        #This is returning None != 3... tail is not being reassigned. 
+        l = LinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        l.append(n1)
+        l.append(n2)
+        self.assertEqual(l.head._next._value, 3)
+    
+    def test_4(self):
+        l = LinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        l.append(n1)
+        l.add_to_front(n2)
+        self.assertEqual(l.head._value, 3)
+
+    def test_5(self):
+        l = LinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        l.append(n1)
+        l.append(n2)
+        n = l.pop()
+        self.assertEqual(n._value, 5)
+    
