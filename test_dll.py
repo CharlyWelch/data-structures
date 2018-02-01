@@ -9,6 +9,7 @@ class DoubleTest(unittest.TestCase):
         self.assertEqual(n1.value(), 5)
 
     def test_2(self):
+        """ test append by head """
         dl = DoubleLinkedList()
         n1 = Node(5)
         n2 = Node (3)
@@ -17,6 +18,7 @@ class DoubleTest(unittest.TestCase):
         self.assertEqual(dl.head._next._value, 3)
 
     def test_3(self):
+        """ test append by tail """
         dl = DoubleLinkedList()
         n1 = Node(5)
         n2 = Node (3)
@@ -43,10 +45,44 @@ class DoubleTest(unittest.TestCase):
         self.assertEqual(dl.head._value, 3)
 
     def test_6(self):
-        """ prev of prior head is now node """
+        """ prev of prior head is now node 2 (n1 here) """
         dl = DoubleLinkedList()
         n1 = Node(5)
         n2 = Node (3)
         dl.push(n1)
         dl.push(n2)
         self.assertEqual(n1._prev._value, 3)
+
+    def test_7(self):
+        """ next of prior head is now head """
+        dl = DoubleLinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        dl.push(n1)
+        dl.push(n2)
+        dl.pop()
+        self.assertEqual(dl.head._value, 5)
+    
+    def test_8(self):
+        """ prev of prior tail is now tail """
+        dl = DoubleLinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        dl.push(n1)
+        dl.push(n2)
+        dl.shift()
+        self.assertEqual(dl.tail._value, 3)
+
+    
+
+    def test_9(self):
+        """ remove by value, new next of prev is now removed node's next """
+        dl = DoubleLinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        n3 = Node(6)
+        dl.append(n1)
+        dl.append(n2)
+        dl.append(n3)
+        dl.remove(3)
+        self.assertEqual(dl.head._next._value, 6)
