@@ -13,7 +13,6 @@ class Node(object):
 
 class LinkedList(object):
     head = None
-    tail = None
     size = 0 
 
     def __init__(self):
@@ -23,7 +22,6 @@ class LinkedList(object):
         """ add a node to the end of the list """
         if self.head is None:
             self.head = node
-            self.tail = node
         else:
             curr = self.head
             while curr:
