@@ -1,13 +1,74 @@
-# Write the required Python class(es) to implement a linked list. The list class should be named LinkedList. Your list implementation should support the following methods:
+class Node(object):
+    _value = None
+    _next = None
 
-# push(val) will insert the value ‘val’ at the head of the list
-# pop() will pop the first value off the head of the list and return it. Raises an exception with an appropriate message if there are no values to return.
-# size() will return the length of the list
-# search(val) will return the node containing ‘val’ in the list, if present, else None
-# remove(node) will remove the given node from the list, wherever it might be (node must be an item in the list). If the node is not in the list, it should raise an exception with an appropriate message.
-# display() will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”
-# In addition to these methods above, your implementation also needs to be able to interact with these built-in Python functions:
+    def __init__(self, value):
+        self._value = value
 
-# len(the_list) returns the size of the list
-# print(the_list) returns what the display() method returns
-# The constructor for your LinkedList class should allow optionally passing an iterable of values. This is the only optional parameter it should take. If an iterable is provided, the result will be a linked list instance containing the values in the iterable. The head of the list should be the last item in the iterable:
+    def value(self):
+        return self._value
+
+    def next(self, next):
+        self._next = next
+
+class LinkedList(object):
+    head = None
+    tail = None
+    size = 0 
+
+    def __init__(self):
+        pass
+
+    def append(self, node):
+        """ add a node to the end of the list """
+        if self.head is None:
+            self.head = node
+            self.tail = node
+        else:
+            curr = self.head
+            while curr:
+                if curr._next is None:
+                    curr._next = node
+                    return
+        self.size += 1
+
+    def add_to_front(self, node):
+        """add an item to the front of the list"""
+        if self.head is None:
+            self.head = node
+        else:
+            node._next = self.head
+            self.head = node
+        
+        self.size += 1
+
+    def pop(self):
+        if self.head is None:
+            return None
+        else: 
+            node = self.head
+            self.head = self.head._next
+            self.size -= 1
+            return node
+
+# l = LinkedList()
+# n1 = Node('A')
+# #head -> n1
+# l.append(n1)
+# print(l.head._value)
+
+# n2 = Node('B')
+# l.append(n2)
+# #head -> n1 -> n2
+# print(l.head._next._value)
+
+# n3 = Node('C')
+# #push to head of list
+# l.push(n3)
+# print(l.head._value)
+# print(l.head._next._value)
+
+# n = l.pop()
+# print("pop1:", n._value)
+# print("pop2:", l.head._value)
+# print("pop3:", l.head._next._value)
