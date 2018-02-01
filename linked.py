@@ -1,48 +1,51 @@
-
 class Element(object):
+    _value = None
+    _next = None
 
     def __init__(self, value):
         self._value = value
-        self._next = None
 
     def value(self):
         return self._value
 
-    def next(self, next = None):
-        if next == None:
-            return self._next
+    def next(self, next):
+        self._next = next
+
+class LinkedList(object):
+    head = None
+    tail = None
+    size = 0 
+
+    def __init__(self):
+        pass
+
+    def append(self, node):
+        """ add a node to the end of the list """
+        if self.head is None:
+            self.head = node
+            self.tail = node
         else:
-            self._next = next
+            curr = self.head
+            while curr:
+                if curr._next is None:
+                    curr._next = node
+        self.size += 1
 
-# class LinkedList(object):
+    def add_to_front(self, node):
+        """add an item to the front of the list"""
+        if self.head is None:
+            self.head = node
+        else:
+            node._next = self.head
+            self.head = node
+        
+        self.size += 1
 
-#     def __init__(self):
-#         self.head = None
-#         self.tail = None
-#         return
-
-#     def add_list_item(self, item):
-#         """add an item to the end of the list"""
-
-#         if not isinstance(item, Element):
-#             item = Element(item)
-
-#         if self.head is None:
-#             self.head = item
-#         else:
-#             self.tail.next = item
-
-#         self.tail = item
-
-#         return
-
-#     def list_length(self):
-#         """ return number of items in list """
-#         count = 0
-#         current_node = self.head
-
-#         while current_node is not None:
-#             count += 1
-#             current_node = current_node.next
-
-#         return count
+    def pop(self):
+        if self.head is None:
+            return None
+        else: 
+            node = self.head
+            self.head = self.head_next
+            self.size -= 1
+            return node
