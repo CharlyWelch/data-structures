@@ -26,7 +26,7 @@ class TestList(unittest.TestCase):
         n1 = Node(5)
         n2 = Node(3)
         l.append(n1)
-        l.add_to_front(n2)
+        l.push(n2)
         self.assertEqual(l.head._value, 3)
 
     def test_5(self):

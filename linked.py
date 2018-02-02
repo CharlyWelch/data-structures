@@ -30,7 +30,7 @@ class LinkedList(object):
                     return
         self.size += 1
 
-    def add_to_front(self, node):
+    def push(self, node):
         """add an item to the front of the list"""
         if self.head is None:
             self.head = node
@@ -41,6 +41,7 @@ class LinkedList(object):
         self.size += 1
 
     def pop(self):
+        """ remove and return the head of the list """
         if self.head is None:
             return None
         else: 
@@ -48,6 +49,22 @@ class LinkedList(object):
             self.head = self.head._next
             self.size -= 1
             return node
+
+    def size(self):
+        """ return the size of the list """
+        pass
+    
+    def search(self, value):
+        """ return the node containing the value if there is one, else, return none """
+        pass
+
+    def remove(self, node):
+        """ remove given node if exists, else raise exception """
+        pass
+
+    def display(self, list):
+        """ display a unicode string representing the list as if it were a tuple: “(12, ‘sam’, 37, ‘tango’)” """
+        pass
 
 # l = LinkedList()
 # n1 = Node('A')
