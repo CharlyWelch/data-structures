@@ -24,6 +24,7 @@ class Stack(object):
         """ add a node to the top of the stack """
         node._next = self.top
         self.top = node
+        self.size += 1
 
     def pop(self):
         """ remove a node from the top of the stack """
@@ -35,3 +36,8 @@ class Stack(object):
             node = self.top
             self.top = node._next
             return node
+        self.size -= 1
+    
+    def __len__(self):
+        """ return the length of the stack """
+        return self.size
