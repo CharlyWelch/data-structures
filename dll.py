@@ -1,4 +1,5 @@
 class Node(object):
+    """ Class object for instantiating nodes to add to the doubly-linked list """
     _value = None
     _next = None
     _prev = None
@@ -93,4 +94,10 @@ class DoubleLinkedList(object):
                     curr = curr._next
         except (RuntimeError):
             return "Node does not exist!"
+
+
+"""
+Andy's comments: 
+1. You use the _ underscore naming in Node as to mean private, but in some places in DoubleLinkList you directly access the attribute. 2. All classes and methods should have a docstring 3. pop() should return None when empty, not an object which is a string => return "No value to return" 4. Pop() has bug fir case of a single node in list 5. Shift() has similar problems as pop() I see you have lots of diverse tests :)
+"""
     
