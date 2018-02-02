@@ -35,7 +35,7 @@ class Queue(object):
 
 
     def dequeue(self):
-        """  remove and return the top of the queue """
+        """  remove and return the top of the queue -- if none, return an error per the instructions """
         if self.top is None:
             return "No nodes to return"
         node = self.top
