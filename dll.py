@@ -13,9 +13,10 @@ class Node(object):
         self._next = next
 
     def prev(self, prev):
-        self.prev = prev
+        self._prev = prev
 
 class DoubleLinkedList(object):
+    """ class object for creating a linked-list data structure """
     head = None
     tail = None
     curr = None
@@ -25,6 +26,7 @@ class DoubleLinkedList(object):
         pass
 
     def append(self, node):
+        """ add a node to end of list """
         if self.head is None:
             self.head = node
             self.tail = node
@@ -74,18 +76,21 @@ class DoubleLinkedList(object):
         """ search by value, remove that node - reassign bookending head and next """
         prev = None
         curr = self.head
-        while curr is not None:
-            if curr._value == value:
-                if prev is not None:
-                    prev._next = curr._next
-                    if curr._next is not None:
-                        curr._next._prev = prev
-                if self.head == curr:
-                    self.head = curr._next
-                if self.tail == curr:
-                    self.tail = curr._prev
-                break
-            else:
-                prev = curr
-                curr = curr._next
+        try: 
+            while curr is not None:
+                if curr._value == value:
+                    if prev is not None:
+                        prev._next = curr._next
+                        if curr._next is not None:
+                            curr._next._prev = prev
+                    if self.head == curr:
+                        self.head = curr._next
+                    if self.tail == curr:
+                        self.tail = curr._prev
+                    break
+                else:
+                    prev = curr
+                    curr = curr._next
+        except (RuntimeError):
+            return "Node does not exist!"
     

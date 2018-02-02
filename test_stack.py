@@ -32,8 +32,15 @@ class TestList(unittest.TestCase):
 
     def test_5(self):
         s = Stack()
-        s.pop
+        s.pop()
         self.assertEqual(s.top, None)
+
+    def test_6(self):
+        s = Stack()
+        n1 = Node(5)
+        s.push(n1)
+        self.assertEqual(s.pop(), 5)
+
 
     
 

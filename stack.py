@@ -1,4 +1,5 @@
 class Node(object):
+    """ Class object to create node instances for stack """
     _value = None
     _next = None
 
@@ -12,6 +13,7 @@ class Node(object):
         self._next = next
 
 class Stack(object):
+    """ Class object to create a stack data structure """
     top = None
     size = 0
 
@@ -19,12 +21,17 @@ class Stack(object):
         pass
 
     def push(self, node):
+        """ add a node to the top of the stack """
         node._next = self.top
         self.top = node
 
     def pop(self):
+        """ remove a node from the top of the stack """
         if self.top is None:
             return None
-        node = self.top
-        self.top = node._next
-        return node
+        elif self.top._next == None:
+            return self.top._value
+        else:
+            node = self.top
+            self.top = node._next
+            return node
