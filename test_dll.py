@@ -86,3 +86,15 @@ class DoubleTest(unittest.TestCase):
         dl.append(n3)
         dl.remove(3)
         self.assertEqual(dl.head._next._value, 6)
+
+    def test_10(self):
+        """ remove by value, return an exception if doesn't exist """
+        dl = DoubleLinkedList()
+        n1 = Node(5)
+        n2 = Node(3)
+        n3 = Node(6)
+        dl.append(n1)
+        dl.append(n2)
+        dl.append(n3)
+        dl.remove(7)
+        self.assertEqual(dl.remove(7), "Node does not exist!")
