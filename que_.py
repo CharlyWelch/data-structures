@@ -51,8 +51,6 @@ class Queue(object):
         else: 
             return self.top._value
 
-    def length(self):
-        """ return the size of the queue """
-        if self.top == None:
-            return 0
+     def __len__(self):
+        """ return the length of the stack """
         return self.size

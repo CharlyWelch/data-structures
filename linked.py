@@ -50,40 +50,32 @@ class LinkedList(object):
             self.size -= 1
             return node
 
-    def size(self):
-        """ return the size of the list """
-        pass
     
-    def search(self, value):
-        """ return the node containing the value if there is one, else, return none """
-        pass
+    ### This is sending my terminal into a neverending loop when testing. Tried many things, so far unable to fix -- continues to loop after passing 5 tests (five dots show up), even if this and the corresponding tests are commented out. Linter in test_linked says "Instance of 'LinkedList' has no 'remove' member" when I hover over the l. 
+    def remove(self, value):
+        """ search by value, remove that node - reassign next. If not present, return exception """
+        prev = None
+        curr = self.head
+        while curr is not None:
+            
+            if curr._value == value:
+                node = curr._value
+                if self.head == curr:
+                    self.head = curr._next
+                else:
+                    prev._next = curr._next
+                    curr._next.prev = prev
+                self.size -= 1
+                return node 
 
-    def remove(self, node):
-        """ remove given node if exists, else raise exception """
-        pass
+            else:
+                curr._next.prev = curr
+                curr = curr._next
 
-    def display(self, list):
-        """ display a unicode string representing the list as if it were a tuple: “(12, ‘sam’, 37, ‘tango’)” """
-        pass
+        if curr is None:
+            return "Error: Node does not exist!"
 
-# l = LinkedList()
-# n1 = Node('A')
-# #head -> n1
-# l.append(n1)
-# print(l.head._value)
 
-# n2 = Node('B')
-# l.append(n2)
-# #head -> n1 -> n2
-# print(l.head._next._value)
-
-# n3 = Node('C')
-# #push to head of list
-# l.push(n3)
-# print(l.head._value)
-# print(l.head._next._value)
-
-# n = l.pop()
-# print("pop1:", n._value)
-# print("pop2:", l.head._value)
-# print("pop3:", l.head._next._value)
+    def __len__(self):
+        """ return the length of the list """
+        return self.size
