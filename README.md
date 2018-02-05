@@ -15,7 +15,7 @@ This repository will be added to sequentially. In it you will find:
 **Queue**
 - **Module**: 'que_.py'
 - **Tests**: 'test_que\_.py'
-- **Time Complexity**: 
+- **Time Complexity**: O(1)
 
 **Stack**
 - **Module**: 'stack.py'
