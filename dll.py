@@ -75,25 +75,29 @@ class DoubleLinkedList(object):
 
     def remove(self, value):
         """ search by value, remove that node - reassign bookending head and next """
-        prev = None
+        _prev = None
         curr = self.head
         try: 
             while curr is not None:
                 if curr._value == value:
-                    if prev is not None:
-                        prev._next = curr._next
+                    if _prev is not None:
+                        _prev._next = curr._next
                         if curr._next is not None:
-                            curr._next._prev = prev
+                            curr._next._prev = _prev
                     if self.head == curr:
                         self.head = curr._next
                     if self.tail == curr:
                         self.tail = curr._prev
                     break
                 else:
-                    prev = curr
+                    _prev = curr
                     curr = curr._next
         except (RuntimeError):
             return "Node does not exist!"
+
+    def __len__(self):
+        """ return the length of the list """
+        return self.size
 
 
 """

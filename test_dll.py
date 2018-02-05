@@ -76,7 +76,7 @@ class DoubleTest(unittest.TestCase):
     
 
     def test_9(self):
-        """ remove by value, new next of prev is now removed node's next """
+        """ remove by value, removed node's next now next of removed node's prev """
         dl = DoubleLinkedList()
         n1 = Node(5)
         n2 = Node(3)
