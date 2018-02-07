@@ -22,6 +22,11 @@ This repository will be added to sequentially. In it you will find:
 - **Tests**: 'test_stack.py'
 - **Time Complexity**: O(1) 
 
+**Dequeue**
+- **Module**: 'deque_.py'
+- **Tests**: 'test_deque_.py'
+- **Time Complexity**: O(1)
+
 # Notes on Data Structures:
 
 ## Singly-linked vs. Doubly-linked lists:
