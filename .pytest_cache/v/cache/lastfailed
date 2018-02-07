@@ -1,3 +1,11 @@
 {
+  "test_deque_.py::DequeueTest": true,
+  "test_deque_.py::DequeueTest::test_2": true,
+  "test_deque_.py::DequeueTest::test_3": true,
+  "test_deque_.py::DequeueTest::test_4": true,
+  "test_deque_.py::DequeueTest::test_5": true,
+  "test_deque_.py::DequeueTest::test_7": true,
+  "test_deque_.py::DequeueTest::test_8": true,
+  "test_deque_.py::DequeueTest::test_9": true,
   "test_dll.py::DoubleTest::test_7": true
 }
