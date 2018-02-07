@@ -1,4 +1,5 @@
 class Node(object):
+    """ Build nodes to add to dequeue """
     _value = None
     _next = None
 
@@ -12,6 +13,7 @@ class Node(object):
         self._next = next
 
 class Dequeue(object):
+    """ Class to make dequeue with nodes - nodes can be added and removed from both the head and tail of a dequeue"""
     head = None
     size = 0
     tail = None
@@ -22,7 +24,6 @@ class Dequeue(object):
 
     def append(self, node): 
         """ adds value to the end of the deque"""
-
         if self.head is None:
             self.head = node
             self.tail = node
@@ -65,9 +66,7 @@ class Dequeue(object):
                 if curr._next == None:    
                     node = curr
                     self.size -= 1
-                    return node
-        
-                              
+                    return node                          
         
     def peek(self): 
         """returns the next value that would be returned by pop but leaves the value in the deque (returns None if the deque is empty)"""
@@ -75,8 +74,6 @@ class Dequeue(object):
             return None
         else:
             return self.tail._value
-
-
 
     def peekleft(self): 
         """ returns the next value that would be returned by popleft but leaves the value in the deque (returns None if the deque is empty)"""

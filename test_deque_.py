@@ -108,17 +108,3 @@ class DequeueTest(unittest.TestCase):
         """ test peekleft() for empty dequeue """
         d = Dequeue()
         self.assertEqual(d.peekleft(), None)
-
-
-
-# class MoreTest(unittest.TestCase):
-#      def test_9(self):
-#         """ """
-#         d = Dequeue()
-#         n1 = Node(1)
-#         n2 = Node(2)
-#         n3 = Node(3)
-#         d.append(n1)
-#         d.append(n2)
-#         d.append(n3)
-#         self.assertEqual(d.tail._value, 3)
