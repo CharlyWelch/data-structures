@@ -27,6 +27,17 @@ This repository will be added to sequentially. In it you will find:
 - **Tests**: 'test_deque_.py'
 - **Time Complexity**: O(1)
 
+**Binary Heap**
+- **Module**: 'binheap.py'
+- **Tests**: 'test_binheap.py'
+- **Time Complexity**: 
+
+**Priority Queue**
+- **Module**: 'priorityq.py'
+- **Tests**: 'priorityq.py'
+- **Time Complexity**: 
+
+
 # Notes on Data Structures:
 
 ## Singly-linked vs. Doubly-linked lists:
