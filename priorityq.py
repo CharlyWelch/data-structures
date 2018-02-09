@@ -12,16 +12,48 @@ class Node(object):
 
     def next(self, next):
         self._next = next
-    
-    def priority(self, priority):
-        self._priority = priority
 
+    def priority(self):
+        return self._priority
+    
 class PriorityQ(object):
     """ to build a priority queue: ordered by an optional priority attribute """
+    head = None
+    tail = None 
 
-    def insert(self, value, priority = 0):
-        """ inserts a value into the queue. Takes an optional argument for node’s priority, set by default to lowest priority. """
-        pass
+    def insert(self, node, priority = 0):
+        """ insert a node into the queue by priority (0 lowest), sets default priority to 0."""
+        node._priority = priority
+
+        if self.head is None:
+            self.head = node
+            self.tail = node
+
+        elif priority == 0:
+            self.tail._next = node
+            self.tail = node
+        
+        else:
+            curr = self.head
+            prev = None
+            if curr._next is not None:
+                if node._priority <= curr._priority:
+                    prev = curr
+                    curr = curr._next
+                else:
+                    if prev is not None:
+                        prev._next = node
+                    curr._next = node._next
+            else:
+                if node._priority <= curr._priority:
+                    self.tail._next = node
+                    self.tail = node
+                else: 
+                    curr.prev = node
+                    node._next = self.head
+                    self.head = node
+
+
 
     def pop(self):
         """ removes and returns the value of the highest priority node """
